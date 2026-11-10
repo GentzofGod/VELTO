@@ -116,7 +116,12 @@ class ShieldService {
     }
 
     // Check for overpayment cue
-    if (lower.contains('overpaid') || lower.contains('extra') || lower.contains('send back') || lower.contains('refund difference')) {
+    if (lower.contains('overpaid') ||
+        lower.contains('extra') ||
+        lower.contains('send back') ||
+        lower.contains('by accident') ||
+        lower.contains('refund difference') ||
+        lower.contains('refund the difference')) {
       indicators.add(const RiskIndicator(
         code: 'IND_OVERPAYMENT_INDICATOR',
         severity: 'HIGH',
